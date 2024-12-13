@@ -2,20 +2,20 @@
 
 A Django-based web application for managing employee records, including CRUD operations, user authentication, and role-based access control.
 
-Features
+### Features
 - View, Add, Remove and Filter employee details.
 - User authentication (login/logout).
 - Role-based access for admin and employees.
 - Responsive design using Django templates and CSS.
 - Integrated database for storing employee records.
 
-Tech Stack
+### Tech Stack
 - **Backend**: Python, Django
 - **Frontend**: HTML, CSS
 - **Database**: SQLite (default Django database)
 - **Version Control**: Git
 
-Installation
+### Installation
 
 1. Clone the repository:
    ```bash
@@ -24,7 +24,7 @@ Installation
 2. Create a virtual environment for py
 3. Access the application at http://127.0.0.1:8000.
    
-Screenshots
+### Screenshots
 ### LOGO
 ![LOGO](screenshots/EMS LOGO.png)
 
@@ -48,15 +48,15 @@ Admin can:
 Manage employee records (view/add/remove/filter).
 Assign roles to employees.
 
-Future Enhancements
+### Future Enhancements
 Employee usage
 Add edit and upload functionality.
 Implement API endpoints for employee management.
 Add support for exporting employee records to CSV.
 
-Contributing
+### Contributing
 Contributions are welcome! Please open an issue or submit a pull request.
 
-License
+### License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
