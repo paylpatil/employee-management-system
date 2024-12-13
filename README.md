@@ -25,22 +25,22 @@ A Django-based web application for managing employee records, including CRUD ope
    
 ### Screenshots
 1.LOGO
-![LOGO](screenshots/EMS LOGO.png)
+![LOGO](static/screenshots/EMS LOGO.png)
 
 2.HOME Page
-![HOME Page](screenshots/EMS home.png)
+![HOME Page](static/screenshots/EMS home.png)
 
 3.VIEW Page
-![VIEW Page](screenshots/EMS view.png)
+![VIEW Page](static/screenshots/EMS view.png)
 
 4.ADD Page
-![ADD Page](screenshots/EMS add.png)
+![ADD Page](static/screenshots/EMS add.png)
 
 5.REMOVE Page
-![REMOVE Page](screenshots/EMS remove.png)
+![REMOVE Page](static/screenshots/EMS remove.png)
 
 6.FILTER Page
-![FILTER Page](screenshots/EMS filter.png)
+![FILTER Page](static/screenshots/EMS filter.png)
 
 ### Usage
 Admin can:
