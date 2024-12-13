@@ -42,7 +42,7 @@ A Django-based web application for managing employee records, including CRUD ope
 6.FILTER Page
 ![FILTER Page](screenshots/EMS filter.png)
 
-Usage
+### Usage
 Admin can:
 Manage employee records (view/add/remove/filter).
 Assign roles to employees.
