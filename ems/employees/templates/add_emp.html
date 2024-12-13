@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Employee</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: inline-block;
+            color: #555;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Add An Employee</h1>
+        <hr>
+
+        <form action="/add_emp" method="post" id="addEmployeeForm">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="first_name">First Name: </label><br>
+                <input type="text" id="first_name" name="first_name" value="{{ first_name }}">
+                <div class="error" id="firstNameError">Please enter the first name.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="last_name">Last Name: </label><br>
+                <input type="text" id="last_name" name="last_name" value="{{ last_name }}">
+                <div class="error" id="lastNameError">Please enter the last name.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="salary">Salary: </label><br>
+                <input type="number" id="salary" name="salary" value="{{ salary }}">
+                <div class="error" id="salaryError">Please enter the salary.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="bonus">Bonus: </label><br>
+                <input type="number" id="bonus" name="bonus" value="{{ bonus }}">
+                <div class="error" id="bonusError">Please enter the bonus.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone no: </label><br>
+                <input type="number" id="phone" name="phone" value="{{ phone }}">
+                <div class="error" id="phoneError">Please enter a valid phone number.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="role">Role: </label><br>
+                <input type="text" id="role" name="role" value="{{ role }}">
+                <div class="error" id="roleError">Please enter the role.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="dept">Department: </label><br>
+                <input type="text" id="dept" name="dept" value="{{ dept }}">
+                <div class="error" id="deptError">Please enter the department.</div>
+            </div>
+
+            <hr>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>      
+    </div>
+
+    <script>
+        // JavaScript for form validation
+        document.getElementById('addEmployeeForm').addEventListener('submit', function(event) {
+            let valid = true;
+
+            // Get form elements
+            const firstName = document.getElementById('first_name');
+            const lastName = document.getElementById('last_name');
+            const salary = document.getElementById('salary');
+            const bonus = document.getElementById('bonus');
+            const phone = document.getElementById('phone');
+            const role = document.getElementById('role');
+            const dept = document.getElementById('dept');
+
+            // Validate first name field
+            if (firstName.value.trim() === "") {
+                document.getElementById('firstNameError').style.display = "block";
+                valid = false;
+            } else {
+                document.getElementById('firstNameError').style.display = "none";
+            }
+
+            // Validate last name field
+            if (lastName.value.trim() === "") {
+                document.getElementById('lastNameError').style.display = "block";
+                valid = false;
+            } else {
+                document.getElementById('lastNameError').style.display = "none";
+            }
+
+            // Validate salary field
+            if (salary.value.trim() === "" || salary.value <= 0) {
+                document.getElementById('salaryError').style.display = "block";
+                valid = false;
+            } else {
+                document.getElementById('salaryError').style.display = "none";
+            }
+
+            // Validate bonus field
+            if (bonus.value.trim() === "" || bonus.value < 0) {
+                document.getElementById('bonusError').style.display = "block";
+                valid = false;
+            } else {
+                document.getElementById('bonusError').style.display = "none";
+            }
+
+            // Validate phone number field
+            if (phone.value.trim() === "" || phone.value.length < 10) {
+                document.getElementById('phoneError').style.display = "block";
+                valid = false;
+            } else {
+                document.getElementById('phoneError').style.display = "none";
+            }
+
+            // Validate role field
+            if (role.value.trim() === "") {
+                document.getElementById('roleError').style.display = "block";
+                valid = false;
+            } else {
+                document.getElementById('roleError').style.display = "none";
+            }
+
+            // Validate department field
+            if (dept.value.trim() === "") {
+                document.getElementById('deptError').style.display = "block";
+                valid = false;
+            } else {
+                document.getElementById('deptError').style.display = "none";
+            }
+
+            // If form is not valid, prevent submission
+            if (!valid) {
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

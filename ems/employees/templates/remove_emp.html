@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Employee</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        /* Dropdown button style */
+        .btn-dropdown {
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Dropdown menu hidden by default */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 200px;
+            margin-top: 10px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        /* Style for each item in the dropdown */
+        .dropdown-item {
+            padding: 8px 16px;
+            text-decoration: none;
+            color: #333;
+            display: block;
+        }
+
+        .dropdown-item:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Container style */
+        .container {
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Remove An Employee!</h1>
+        <hr>
+        <div class="dropdown">
+            <button class="btn-dropdown" id="dropdownMenuButton">
+              Choose Employee To Be Removed
+            </button>
+            <ul class="dropdown-menu" id="dropdownMenu">
+                {% for emp in emps %}
+                    <li><a class="dropdown-item" href="/remove_emp/{{emp.id}}">{{emp.first_name}} {{emp.last_name}}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Get the dropdown elements
+        const dropdownButton = document.getElementById('dropdownMenuButton');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+
+        // Toggle the visibility of the dropdown when the button is clicked
+        dropdownButton.addEventListener('click', function(event) {
+            // Prevent the event from propagating to the window's click listener
+            event.stopPropagation();
+
+            // Toggle dropdown visibility
+            const isVisible = dropdownMenu.style.display === 'block';
+            dropdownMenu.style.display = isVisible ? 'none' : 'block';
+        });
+
+        // Close the dropdown if clicked outside of it
+        window.addEventListener('click', function(event) {
+            if (!event.target.matches('#dropdownMenuButton') && !event.target.closest('.dropdown')) {
+                dropdownMenu.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
