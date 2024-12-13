@@ -24,23 +24,12 @@ A Django-based web application for managing employee records, including CRUD ope
 3. Access the application at http://127.0.0.1:8000.
    
 ### Screenshots
-1.LOGO
-![LOGO](static/screenshots/EMS LOGO.png)
-
-2.HOME Page
-![HOME Page](static/screenshots/EMS home.png)
-
-3.VIEW Page
-![VIEW Page](static/screenshots/EMS view.png)
-
-4.ADD Page
-![ADD Page](static/screenshots/EMS add.png)
-
-5.REMOVE Page
-![REMOVE Page](static/screenshots/EMS remove.png)
-
-6.FILTER Page
-![FILTER Page](static/screenshots/EMS filter.png)
+1. **LOGO** ![LOGO](static/screenshots/EMS%20LOGO.png)
+2. **HOME Page** ![HOME Page](static/screenshots/EMS%20home.png)
+3. **VIEW Page** ![VIEW Page](static/screenshots/EMS%20view.png)
+4. **ADD Page** ![ADD Page](static/screenshots/EMS%20add.png)
+5. **REMOVE Page** ![REMOVE Page](static/screenshots/EMS%20remove.png)
+6. **FILTER Page** ![FILTER Page](static/screenshots/EMS%20filter.png)
 
 ### Usage
 Admin can:
