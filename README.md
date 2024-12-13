@@ -4,7 +4,6 @@ A Django-based web application for managing employee records, including CRUD ope
 
 ### Features
 - View, Add, Remove and Filter employee details.
-- User authentication (login/logout).
 - Role-based access for admin and employees.
 - Responsive design using Django templates and CSS.
 - Integrated database for storing employee records.
